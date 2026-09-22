@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кроссовки мужские Demix Frontline Wave 2 - СпортСити</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style_product.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
+    <header class="top-header">
+      <div class="top-bar container1">
+        <span>г. Челябинск</span>
+          <div class="top-links">
+            <a href="#">Магазины</a>
+            <a href="#">Помощь</a>
+          </div>
+      </div>
+    </header>
+
+    <!-- ОСНОВНОЙ ХЕДЕР -->
+    <header class="site-header">
+        <div class="main-header container-header">
+            <a href="index.html" class="logo">СпортСити</a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Поиск">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="user-actions">
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="far fa-heart"></i></a>
+                <a href="#" class="login" id="loginLink"><i class="far fa-user"></i>ВОЙТИ</a>
+            </div>
+        </div>
+
+        <!-- НАВИГАЦИЯ -->
+        <nav class="main-nav">
+            <div class="container-header nav-container">
+                <button class="catalog-btn" id="catalogBtn">
+                    <i class="fas fa-bars"></i>КАТАЛОГ
+                </button>
+                <a href="#" class="nav-link">ЖЕНЩИНАМ</a>
+                <a href="#" class="nav-link">МУЖЧИНАМ</a>
+                <a href="#" class="nav-link">ДЕТЯМ И ПОДРОСТКАМ</a>
+                <a href="#" class="nav-link">БРЕНДЫ</a>
+                <a href="#" class="nav-link">АКЦИИ</a>
+                <a href="#" class="nav-link sale-link">% РАСПРОДАЖА</a>
+                <a href="#" class="nav-link premium-link"><i class="fas fa-star"></i> PREMIUM</a>
+            </div>
+        </nav>
+
+        <!-- ВЫПАДАЮЩИЙ КАТАЛОГ -->
+        <div class="catalog-dropdown" id="catalogDropdown">
+            <div class="catalog-dropdown-header">
+                <span class="catalog-dropdown-title">КАТАЛОГ</span>
+                <button class="close-catalog-dropdown" id="closeCatalogDropdown">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="catalog-dropdown-body">
+                <div class="catalog-sidebar">
+                    <ul>
+                        <li class="active">Всё</li>
+                        <li>Одежда</li>
+                        <li>Обувь</li>
+                        <li>Аксессуары</li>
+                        <li>Спорт и отдых</li>
+                        <li>Туризм</li>
+                        <li>Питание</li>
+                    </ul>
+                </div>
+                <div class="catalog-main">
+                    <div class="catalog-column">
+                        <h4>ЖЕНЩИНАМ</h4>
+                        <a href="#">Кроссовки</a>
+                        <a href="#">Кеды</a>
+                        <a href="#">Ботинки</a>
+                        <a href="#">Куртки</a>
+                        <a href="#">Купальники</a>
+                        <a href="#">Леггинсы</a>
+                    </div>
+                    <div class="catalog-column">
+                        <h4>МУЖЧИНАМ</h4>
+                        <a href="#">Кроссовки</a>
+                        <a href="#">Кеды</a>
+                        <a href="#">Ботинки</a>
+                        <a href="#">Куртки</a>
+                        <a href="#">Футболки</a>
+                        <a href="#">Штаны</a>
+                    </div>
+                    <div class="catalog-column">
+                        <h4>ДЕТЯМ</h4>
+                        <a href="#">Девочкам</a>
+                        <a href="#">Мальчикам</a>
+                        <a href="#">Малышам</a>
+                        <a href="#">Школьная форма</a>
+                    </div>
+                    <div class="catalog-column">
+                        <h4>ВИДЫ СПОРТА</h4>
+                        <a href="#">Бег</a>
+                        <a href="#">Фитнес</a>
+                        <a href="#">Футбол</a>
+                        <a href="#">Плавание</a>
+                        <a href="#">Зимний спорт</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- МОДАЛЬНОЕ ОКНО ВХОДА -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-modal">
+            <button class="login-close" id="loginClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="login-image">
+                <img src="./assets/img/Баннер_Для_Входа.png" alt="Спорт">
+            </div>
+            <div class="login-form-container">
+                <h2>Войдите в аккаунт</h2>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="login">Логин</label>
+                        <input type="text" id="login" name="login">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" name="password" placeholder="Длина пароля не менее 6 символов">
+                    </div>
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Запомнить меня</label>
+                    </div>
+                    <button type="submit" class="login-btn">ВОЙТИ</button>
+                    <div class="login-links">
+                        <p>Ещё не зарегистрированы? <a href="#">Регистрация</a></p>
+                        <a href="#" class="admin-link">Войти как администратор</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ СТРАНИЦЫ ТОВАРА -->
+    <main class="product-page">
+        <div class="container">
+            <!-- ХЛЕБНЫЕ КРОШКИ -->
+            <div class="product-breadcrumb">
+                <a href="index.html">Главная</a> / 
+                <a href="#">Мужчинам</a> / 
+                <a href="#">Обувь</a> / 
+                <span>Кроссовки мужские Demix Frontline Wave 2</span>
+            </div>
+
+            <div class="product-content">
+                <!-- ЛЕВАЯ КОЛОНКА - ГАЛЕРЕЯ ИЗОБРАЖЕНИЙ -->
+                <div class="product-gallery">
+                    <div class="gallery-thumbnails">
+                        <button class="thumb-nav thumb-up">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                        <div class="thumbnails-list" id="thumbnailsList">
+                            <div class="thumbnail active" 
+                                 data-thumb="./assets/img/thumb_1.jpg" 
+                                 data-main="./assets/img/main_1_hd.jpg">
+                                <img src="./assets/img/thumb_1.jpg" alt="Вид сбоку">
+                            </div>
+                            <div class="thumbnail" 
+                                 data-thumb="./assets/img/thumb_2.jpg" 
+                                 data-main="./assets/img/main_2_hd.jpg">
+                                <img src="./assets/img/thumb_2.jpg" alt="Вид спереди">
+                            </div>
+                            <div class="thumbnail" 
+                                 data-thumb="./assets/img/thumb_3.jpg" 
+                                 data-main="./assets/img/main_3_hd.jpg">
+                                <img src="./assets/img/thumb_3.jpg" alt="Вид сзади">
+                            </div>
+                            <div class="thumbnail" 
+                                 data-thumb="./assets/img/thumb_4.jpg" 
+                                 data-main="./assets/img/main_4_hd.jpg">
+                                <img src="./assets/img/thumb_4.jpg" alt="Вид сверху">
+                            </div>
+                            <div class="thumbnail" 
+                                 data-thumb="./assets/img/thumb_5.jpg" 
+                                 data-main="./assets/img/main_5_hd.jpg">
+                                <img src="./assets/img/thumb_5.jpg" alt="Детали">
+                            </div>
+                        </div>
+                        <button class="thumb-nav thumb-down">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="gallery-main">
+                        <img src="./assets/img/main_1_hd.jpg" alt="Кроссовки" id="mainImage">
+                    </div>
+                </div>
+
+                <!-- ЦЕНТРАЛЬНАЯ КОЛОНКА - ИНФОРМАЦИЯ О ТОВАРЕ -->
+                <div class="product-info">
+                    <div class="product-brand">
+                        <img src="./assets/img/найк.png" alt="Demix" class="brand-logo">
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">871 отзыв</span>
+                        </div>
+                        <div class="badge-split">Сплит -3%</div>
+                    </div>
+
+                    <h1 class="product-title">Кроссовки мужские Demix Frontline Wave 2</h1>
+                    <div class="product-article">Арт. 130368DMX-WM-39</div>
+                    
+                    <div class="product-color">
+                        <span>Цвет: белый/синий</span>
+                        <div class="color-preview">
+                            <div class="color-box" style="background: linear-gradient(135deg, #fff 50%, #0066cc 50%);"></div>
+                        </div>
+                    </div>
+
+                    <div class="product-sizes">
+                        <div class="sizes-header">
+                            <span>Размеры</span>
+                            <a href="#" class="size-guide">Таблица размеров</a>
+                        </div>
+                        <div class="sizes-grid" id="sizesGrid">
+                            <button class="size-btn" data-size="39">39</button>
+                            <button class="size-btn" data-size="40">40</button>
+                            <button class="size-btn" data-size="41">41</button>
+                            <button class="size-btn" data-size="42">42</button>
+                            <button class="size-btn" data-size="43">43</button>
+                            <button class="size-btn" data-size="44">44</button>
+                            <button class="size-btn" data-size="45">45</button>
+                        </div>
+                    </div>
+
+                    <div class="product-characteristics">
+                        <h3>Характеристики</h3>
+                        <div class="characteristics-list" id="characteristicsList">
+                            <div class="characteristic-row">
+                                <span class="char-label">Особенности модели</span>
+                                <span class="char-value">Вставки из сетки</span>
+                            </div>
+                            <div class="characteristic-row">
+                                <span class="char-label">Полнота</span>
+                                <span class="char-value">Средняя</span>
+                            </div>
+                            <div class="characteristic-row">
+                                <span class="char-label">Застежка</span>
+                                <span class="char-value">Шнуровка</span>
+                            </div>
+                            <div class="characteristic-row">
+                                <span class="char-label">Пол</span>
+                                <span class="char-value">Мужчины</span>
+                            </div>
+                            <div class="characteristic-row">
+                                <span class="char-label">Вид спорта</span>
+                                <span class="char-value">Волейбол</span>
+                            </div>
+                        </div>
+                        <button class="show-all-characteristics" id="showAllCharacteristics">
+                            Все характеристики
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ПРАВАЯ КОЛОНКА - ЦЕНА И КНОПКИ -->
+                <div class="product-sidebar">
+                    <div class="price-block">
+                        <div class="current-price">4 999 ₽</div>
+                        <div class="old-price">5 999 ₽</div>
+                        <div class="discount-badge">-20%</div>
+                    </div>
+                    
+                    <a href="./cart.html">
+                    <button class="btn-add-to-cart">В корзину</button>
+                    </a>
+
+                    <button class="btn-add-to-favorites">
+                        <i class="far fa-heart"></i> В избранное
+                    </button>
+
+                    <div class="product-reviews-short">
+                        <div class="review-score">
+                            <div class="score-number">5,0</div>
+                            <div class="score-total">871 отзыв</div>
+                        </div>
+                        <div class="review-bars">
+                            <div class="review-bar-row">
+                                <div class="stars-label">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 100%"></div>
+                                </div>
+                                <div class="bar-count">871</div>
+                            </div>
+                            <div class="review-bar-row">
+                                <div class="stars-label">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%"></div>
+                                </div>
+                                <div class="bar-count">0</div>
+                            </div>
+                            <div class="review-bar-row">
+                                <div class="stars-label">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%"></div>
+                                </div>
+                                <div class="bar-count">0</div>
+                            </div>
+                            <div class="review-bar-row">
+                                <div class="stars-label">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%"></div>
+                                </div>
+                                <div class="bar-count">0</div>
+                            </div>
+                            <div class="review-bar-row">
+                                <div class="stars-label">
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%"></div>
+                                </div>
+                                <div class="bar-count">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- БЛОК С ОТЗЫВАМИ -->
+            <section class="product-reviews-section">
+                <h2>Отзывы о товаре</h2>
+                <div class="reviews-summary">
+                    <div class="summary-score">
+                        <div class="big-score">5,0</div>
+                        <div class="big-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="total-reviews">871 отзыв</div>
+                    </div>
+                    <div class="summary-bars">
+                        <div class="summary-bar-row">
+                            <div class="stars-count">5 звезд</div>
+                            <div class="bar-wrapper">
+                                <div class="bar-progress" style="width: 100%"></div>
+                            </div>
+                            <div class="bar-value">871</div>
+                        </div>
+                        <div class="summary-bar-row">
+                            <div class="stars-count">4 звезды</div>
+                            <div class="bar-wrapper">
+                                <div class="bar-progress" style="width: 0%"></div>
+                            </div>
+                            <div class="bar-value">0</div>
+                        </div>
+                        <div class="summary-bar-row">
+                            <div class="stars-count">3 звезды</div>
+                            <div class="bar-wrapper">
+                                <div class="bar-progress" style="width: 0%"></div>
+                            </div>
+                            <div class="bar-value">0</div>
+                        </div>
+                        <div class="summary-bar-row">
+                            <div class="stars-count">2 звезды</div>
+                            <div class="bar-wrapper">
+                                <div class="bar-progress" style="width: 0%"></div>
+                            </div>
+                            <div class="bar-value">0</div>
+                        </div>
+                        <div class="summary-bar-row">
+                            <div class="stars-count">1 звезда</div>
+                            <div class="bar-wrapper">
+                                <div class="bar-progress" style="width: 0%"></div>
+                            </div>
+                            <div class="bar-value">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reviews-list">
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer-name">Надежда <i class="fas fa-check-circle verified"></i></div>
+                            <div class="review-date">15 апреля 2025</div>
+                        </div>
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="review-text">Кроссовки пришли вовремя. Соответствуют описанию. Покупала мужу на день рождения, ему понравились. Рекомендую.</div>
+                    </div>
+
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer-name">Константин <i class="fas fa-check-circle verified"></i></div>
+                            <div class="review-date">10 апреля 2025</div>
+                        </div>
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="review-text">Заказал куртку и термобелье все пришло быстро, упаковано отлично. Размер подошел, ткань качественная, приятная к телу. Спасибо за честный магазин, теперь только к вам.</div>
+                    </div>
+
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer-name">Андрей <i class="fas fa-check-circle verified"></i></div>
+                            <div class="review-date">5 апреля 2025</div>
+                        </div>
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="review-text">Покупал куртку M65 не в сезон. Фото не передают, насколько она крутая вживую. Все добротно: фурнитура, швы, ткань видно, что вещь надолго. Доставили быстро, без нареканий.</div>
+                    </div>
+                </div>
+
+                <button class="load-more-reviews">Показать все отзывы</button>
+            </section>
+        </div>
+    </main>
+
+    <!-- ФУТЕР -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ИНФОРМАЦИЯ</h3>
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Магазины</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>СЕРВИС И ПОМОЩЬ</h3>
+                    <ul>
+                        <li><a href="#">О доставке</a></li>
+                        <li><a href="#">Личный кабинет</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Публичная оферта</a></li>
+                        <li><a href="#">Пользовательское соглашение</a></li>
+                        <li><a href="#">Контактная информация</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>КОНТАКТЫ</h3>
+                    <div class="footer-contacts">
+                        <a href="tel:+89999999999" class="contact-phone">+8 (999) 999-99-99</a>
+                        <a href="mailto:sportcity@mail.ru" class="contact-email">sportcity@mail.ru</a>
+                        
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-vk"></i></a>
+                            <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+
+                        <div class="newsletter">
+                            <h4>ХОТИТЕ ПОЛУЧАТЬ СКИДКИ ПЕРВЫМ?</h4>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="Введите свой e-mail">
+                                <button><i class="far fa-envelope"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/product.js"></script>
+</body>
+</html>

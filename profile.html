@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - СпортСити</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/profile.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ХЕДЕР (ИДЕНТИЧЕН ГЛАВНОЙ) -->
+    <header class="top-header">
+      <div class="top-bar container">
+        <span>г. Челябинск</span>
+          <div class="top-links">
+            <a href="#">Магазины</a>
+            <a href="#">Помощь</a>
+          </div>
+      </div>
+    </header>
+
+    <header class="site-header">
+        <div class="main-header container">
+            <a href="index.html" class="logo">СпортСити</a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Поиск">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="user-actions">
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="far fa-heart"></i></a>
+                <a href="#" class="login active-user"><i class="fas fa-user-circle"></i> ЛОЗЕЙКО</a>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <div class="container nav-container">
+                <button class="catalog-btn" id="catalogBtn">
+                    <i class="fas fa-bars"></i>КАТАЛОГ
+                </button>
+                <a href="#" class="nav-link">ЖЕНЩИНАМ</a>
+                <a href="#" class="nav-link">МУЖЧИНАМ</a>
+                <a href="#" class="nav-link">ДЕТЯМ И ПОДРОСТКАМ</a>
+                <a href="#" class="nav-link">БРЕНДЫ</a>
+                <a href="#" class="nav-link">АКЦИИ</a>
+                <a href="#" class="nav-link sale-link">% РАСПРОДАЖА</a>
+                <a href="#" class="nav-link premium-link"><i class="fas fa-star"></i> PREMIUM</a>
+            </div>
+        </nav>
+
+        <!-- КАТАЛОГ -->
+        <div class="catalog-dropdown" id="catalogDropdown">
+            <div class="catalog-dropdown-header">
+                <span class="catalog-dropdown-title">КАТАЛОГ</span>
+                <button class="close-catalog-dropdown" id="closeCatalogDropdown"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="catalog-dropdown-body">
+                <div class="catalog-sidebar">
+                    <ul>
+                        <li class="active">Всё</li>
+                        <li>Одежда</li>
+                        <li>Обувь</li>
+                        <li>Аксессуары</li>
+                        <li>Спорт и отдых</li>
+                        <li>Туризм</li>
+                        <li>Питание</li>
+                    </ul>
+                </div>
+                <div class="catalog-main">
+                    <div class="catalog-column">
+                        <h4>ЖЕНЩИНАМ</h4>
+                        <a href="#">Кроссовки</a>
+                        <a href="#">Кеды</a>
+                        <a href="#">Ботинки</a>
+                        <a href="#">Куртки</a>
+                        <a href="#">Купальники</a>
+                        <a href="#">Леггинсы</a>
+                    </div>
+                    <div class="catalog-column">
+                        <h4>МУЖЧИНАМ</h4>
+                        <a href="#">Кроссовки</a>
+                        <a href="#">Кеды</a>
+                        <a href="#">Ботинки</a>
+                        <a href="#">Куртки</a>
+                        <a href="#">Футболки</a>
+                        <a href="#">Штаны</a>
+                    </div>
+                    <div class="catalog-column">
+                        <h4>ДЕТЯМ</h4>
+                        <a href="#">Девочкам</a>
+                        <a href="#">Мальчикам</a>
+                        <a href="#">Малышам</a>
+                        <a href="#">Школьная форма</a>
+                    </div>
+                    <div class="catalog-column">
+                        <h4>ВИДЫ СПОРТА</h4>
+                        <a href="#">Бег</a>
+                        <a href="#">Фитнес</a>
+                        <a href="#">Футбол</a>
+                        <a href="#">Плавание</a>
+                        <a href="#">Зимний спорт</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- МОДАЛЬНОЕ ОКНО ВХОДА -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-modal">
+            <button class="login-close" id="loginClose"><i class="fas fa-times"></i></button>
+            <div class="login-image">
+                <img src="./assets/img/Баннер_Для_Входа.png" alt="Спорт">
+            </div>
+            <div class="login-form-container">
+                <h2>Войдите в аккаунт</h2>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="login">Логин</label>
+                        <input type="text" id="login" name="login">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" name="password" placeholder="Длина пароля не менее 6 символов">
+                    </div>
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Запомнить меня</label>
+                    </div>
+                    <button type="submit" class="login-btn">ВОЙТИ</button>
+                    <div class="login-links">
+                        <p>Ещё не зарегистрированы? <a href="register.html">Регистрация</a></p>
+                        <a href="#" class="admin-link">Войти как администратор</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ - ЛИЧНЫЙ КАБИНЕТ -->
+    <main class="profile-page">
+        <div class="container">
+            
+            <h1 class="page-title">Личный кабинет</h1>
+
+            <div class="profile-layout">
+                
+                <!-- БОКОВОЕ МЕНЮ -->
+                <aside class="profile-sidebar">
+                    <nav class="profile-nav">
+                        <a href="#" class="active" data-tab="info">
+                            <i class="fas fa-user"></i> Мои данные
+                        </a>
+                        <a href="#" data-tab="orders">
+                            <i class="fas fa-shopping-bag"></i> История заказов
+                        </a>
+                        <a href="#" data-tab="addresses">
+                            <i class="fas fa-map-marker-alt"></i> Адреса доставки
+                        </a>
+                        <a href="#" data-tab="favorites">
+                            <i class="fas fa-heart"></i> Избранное
+                        </a>
+                        <a href="#" data-tab="settings">
+                            <i class="fas fa-cog"></i> Настройки
+                        </a>
+                        <a href="index.html" class="logout-link">
+                            <i class="fas fa-sign-out-alt"></i> Выйти
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- РАБОЧАЯ ОБЛАСТЬ -->
+                <div class="profile-content">
+                    
+                    <!-- ВКЛАДКА: МОИ ДАННЫЕ -->
+                    <div class="profile-tab active" id="tab-info">
+                        <div class="profile-card">
+                            <div class="card-header">
+                                <h2>Личные данные</h2>
+                                <button class="btn-edit" onclick="toggleEdit()"><i class="fas fa-pencil-alt"></i> Редактировать</button>
+                            </div>
+                            
+                            <div class="user-avatar-section">
+                                <div class="user-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="user-basic-info">
+                                    <h3>Никита Лозейко</h3>
+                                    <p>Клиент с апреля 2025</p>
+                                </div>
+                            </div>
+
+                            <div class="user-details" id="userDetails">
+                                <div class="detail-row">
+                                    <div class="detail-item">
+                                        <label>Фамилия</label>
+                                        <p>Лозейко</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Имя</label>
+                                        <p>Никита</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Отчество</label>
+                                        <p>Дмитриевич</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="detail-row">
+                                    <div class="detail-item">
+                                        <label>E-Mail</label>
+                                        <p>gl@mail.ru</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Телефон</label>
+                                        <p>+7 (908) 000 00 00</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Дата рождения</label>
+                                        <p>16.12.1941</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Форма редактирования (скрыта по умолчанию) -->
+                            <div class="edit-form" id="editForm" style="display: none;">
+                                <div class="form-row-2">
+                                    <div class="form-group">
+                                        <label>Фамилия</label>
+                                        <input type="text" class="form-input" value="Иванов">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Имя</label>
+                                        <input type="text" class="form-input" value="Константин">
+                                    </div>
+                                </div>
+                                <div class="form-row-2">
+                                    <div class="form-group">
+                                        <label>Отчество</label>
+                                        <input type="text" class="form-input" value="Сергеевич">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>E-Mail</label>
+                                        <input type="email" class="form-input" value="nikita161208@mail.ru">
+                                    </div>
+                                </div>
+                                <div class="form-row-2">
+                                    <div class="form-group">
+                                        <label>Телефон</label>
+                                        <input type="tel" class="form-input" value="+7 (908) 000-00-00">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Дата рождения</label>
+                                        <input type="date" class="form-input" value="2008-12-16">
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn-save" onclick="saveChanges()">Сохранить</button>
+                                    <button class="btn-cancel" onclick="cancelEdit()">Отмена</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- СТАТИСТИКА ПОКУПОК -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <i class="fas fa-shopping-cart"></i>
+                                <div class="stat-info">
+                                    <span class="stat-value">12</span>
+                                    <span class="stat-label">Всего заказов</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-ruble-sign"></i>
+                                <div class="stat-info">
+                                    <span class="stat-value">45 680 ₽</span>
+                                    <span class="stat-label">Потрачено</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-star"></i>
+                                <div class="stat-info">
+                                    <span class="stat-value">850</span>
+                                    <span class="stat-label">Бонусных баллов</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ВКЛАДКА: ИСТОРИЯ ЗАКАЗОВ -->
+                    <div class="profile-tab" id="tab-orders">
+                        <div class="profile-card">
+                            <div class="card-header">
+                                <h2>История заказов</h2>
+                                <div class="filter-controls">
+                                    <select class="filter-select">
+                                        <option>Все заказы</option>
+                                        <option>Активные</option>
+                                        <option>Завершенные</option>
+                                        <option>Отмененные</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="orders-list">
+                                
+                                <!-- Заказ 1 -->
+                                <div class="order-item">
+                                    <div class="order-header">
+                                        <div class="order-info">
+                                            <span class="order-number">Заказ #10248</span>
+                                            <span class="order-date">15 апреля 2025</span>
+                                        </div>
+                                        <span class="order-status status-delivered">Доставлен</span>
+                                    </div>
+                                    <div class="order-products">
+                                        <div class="product-mini">
+                                            <img src="./assets/img/кроссовки1.png" alt="Товар">
+                                            <div class="product-mini-info">
+                                                <p>Кроссовки мужские Demix Frontline Wave 2</p>
+                                                <span>1 шт. × 4 999 ₽</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-mini">
+                                            <img src="./assets/img/НОСКИ.png" alt="Товар">
+                                            <div class="product-mini-info">
+                                                <p>Носки Nike Value Cotton Crew, 3 пары</p>
+                                                <span>2 шт. × 1 349 ₽</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-footer">
+                                        <span class="order-total">Итого: 7 697 ₽</span>
+                                        <button class="btn-repeat"><i class="fas fa-redo"></i> Повторить заказ</button>
+                                        <button class="btn-details">Подробнее</button>
+                                    </div>
+                                </div>
+
+                                <!-- Заказ 2 -->
+                                <div class="order-item">
+                                    <div class="order-header">
+                                        <div class="order-info">
+                                            <span class="order-number">Заказ #10235</span>
+                                            <span class="order-date">10 апреля 2025</span>
+                                        </div>
+                                        <span class="order-status status-shipping">В пути</span>
+                                    </div>
+                                    <div class="order-products">
+                                        <div class="product-mini">
+                                            <img src="./assets/img/лонгслив.png" alt="Товар">
+                                            <div class="product-mini-info">
+                                                <p>Лонгслив спортивный M NK DF TEE RLGD LS</p>
+                                                <span>1 шт. × 4 990 ₽</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-footer">
+                                        <span class="order-total">Итого: 4 990 ₽</span>
+                                        <button class="btn-track"><i class="fas fa-truck"></i> Отследить</button>
+                                        <button class="btn-details">Подробнее</button>
+                                    </div>
+                                </div>
+
+                                <!-- Заказ 3 -->
+                                <div class="order-item">
+                                    <div class="order-header">
+                                        <div class="order-info">
+                                            <span class="order-number">Заказ #10220</span>
+                                            <span class="order-date">5 апреля 2025</span>
+                                        </div>
+                                        <span class="order-status status-completed">Выдан</span>
+                                    </div>
+                                    <div class="order-products">
+                                        <div class="product-mini">
+                                            <img src="./assets/img/сумка.png" alt="Товар">
+                                            <div class="product-mini-info">
+                                                <p>Сумка спортивная унисекс Nike Academy Team</p>
+                                                <span>1 шт. × 8 699 ₽</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-mini">
+                                            <img src="./assets/img/повязка.png" alt="Товар">
+                                            <div class="product-mini-info">
+                                                <p>Повязка Nike</p>
+                                                <span>1 шт. × 1 099 ₽</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-footer">
+                                        <span class="order-total">Итого: 9 798 ₽</span>
+                                        <button class="btn-repeat"><i class="fas fa-redo"></i> Повторить заказ</button>
+                                        <button class="btn-details">Подробнее</button>
+                                    </div>
+                                </div>
+
+                                <!-- Заказ 4 -->
+                                <div class="order-item">
+                                    <div class="order-header">
+                                        <div class="order-info">
+                                            <span class="order-number">Заказ #10198</span>
+                                            <span class="order-date">28 марта 2025</span>
+                                        </div>
+                                        <span class="order-status status-cancelled">Отменен</span>
+                                    </div>
+                                    <div class="order-products">
+                                        <div class="product-mini">
+                                            <img src="./assets/img/велосипедки.png" alt="Товар">
+                                            <div class="product-mini-info">
+                                                <p>Велосипедки Classic Kids Nike</p>
+                                                <span>1 шт. × 1 290 ₽</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-footer">
+                                        <span class="order-total">Итого: 1 290 ₽</span>
+                                        <button class="btn-details">Подробнее</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ВКЛАДКА: АДРЕСА -->
+                    <div class="profile-tab" id="tab-addresses">
+                        <div class="profile-card">
+                            <div class="card-header">
+                                <h2>Адреса доставки</h2>
+                                <button class="btn-add"><i class="fas fa-plus"></i> Добавить адрес</button>
+                            </div>
+                            
+                            <div class="addresses-list">
+                                <div class="address-card active">
+                                    <div class="address-badge">Основной</div>
+                                    <div class="address-info">
+                                        <strong>г. Челябинск, ул. Кирова, 110, кв. 42</strong>
+                                        <p>Подъезд 3, Этаж 5</p>
+                                        <p class="address-phone">+7 (908) 709-87-88</p>
+                                    </div>
+                                    <div class="address-actions">
+                                        <button class="btn-edit-small"><i class="fas fa-pencil-alt"></i></button>
+                                        <button class="btn-delete-small"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="address-card">
+                                    <div class="address-info">
+                                        <strong>г. Челябинск, пр. Ленина, 55, офис 12</strong>
+                                        <p>Подъезд 1, Этаж 2</p>
+                                        <p class="address-phone">+7 (908) 709-87-88</p>
+                                    </div>
+                                    <div class="address-actions">
+                                        <button class="btn-set-default">Сделать основным</button>
+                                        <button class="btn-edit-small"><i class="fas fa-pencil-alt"></i></button>
+                                        <button class="btn-delete-small"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ВКЛАДКА: ИЗБРАННОЕ -->
+                    <div class="profile-tab" id="tab-favorites">
+                        <div class="profile-card">
+                            <div class="card-header">
+                                <h2>Избранные товары</h2>
+                                <span class="items-count">4 товара</span>
+                            </div>
+                            
+                            <div class="favorites-grid">
+                                <div class="favorite-item">
+                                    <div class="fav-image">
+                                        <img src="./assets/img/кроссовки1.png" alt="Товар">
+                                        <button class="btn-remove-fav"><i class="fas fa-times"></i></button>
+                                    </div>
+                                    <div class="fav-info">
+                                        <p class="fav-title">Кроссовки мужские Demix Frontline Wave 2</p>
+                                        <span class="fav-price">4 999 ₽</span>
+                                        <button class="btn-to-cart-small">В корзину</button>
+                                    </div>
+                                </div>
+
+                                <div class="favorite-item">
+                                    <div class="fav-image">
+                                        <img src="./assets/img/сумка.png" alt="Товар">
+                                        <button class="btn-remove-fav"><i class="fas fa-times"></i></button>
+                                    </div>
+                                    <div class="fav-info">
+                                        <p class="fav-title">Сумка спортивная унисекс Nike Academy Team</p>
+                                        <span class="fav-price">8 699 ₽</span>
+                                        <button class="btn-to-cart-small">В корзину</button>
+                                    </div>
+                                </div>
+
+                                <div class="favorite-item">
+                                    <div class="fav-image">
+                                        <img src="./assets/img/лонгслив.png" alt="Товар">
+                                        <button class="btn-remove-fav"><i class="fas fa-times"></i></button>
+                                    </div>
+                                    <div class="fav-info">
+                                        <p class="fav-title">Лонгслив спортивный M NK DF TEE RLGD LS</p>
+                                        <span class="fav-price">4 990 ₽</span>
+                                        <button class="btn-to-cart-small">В корзину</button>
+                                    </div>
+                                </div>
+
+                                <div class="favorite-item">
+                                    <div class="fav-image">
+                                        <img src="./assets/img/повязка.png" alt="Товар">
+                                        <button class="btn-remove-fav"><i class="fas fa-times"></i></button>
+                                    </div>
+                                    <div class="fav-info">
+                                        <p class="fav-title">Повязка Nike</p>
+                                        <span class="fav-price">1 099 ₽</span>
+                                        <button class="btn-to-cart-small">В корзину</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ВКЛАДКА: НАСТРОЙКИ -->
+                    <div class="profile-tab" id="tab-settings">
+                        <div class="profile-card">
+                            <div class="card-header">
+                                <h2>Настройки аккаунта</h2>
+                            </div>
+                            
+                            <div class="settings-section">
+                                <h3>Уведомления</h3>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <strong>Email-рассылка</strong>
+                                        <p>Получать новости об акциях и скидках</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <strong>SMS-уведомления</strong>
+                                        <p>Статус заказа и доставка</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-section">
+                                <h3>Безопасность</h3>
+                                <div class="setting-item clickable" onclick="alert('Функция смены пароля')">
+                                    <div class="setting-info">
+                                        <strong>Сменить пароль</strong>
+                                        <p>Последнее изменение: 15.04.2025</p>
+                                    </div>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                                <div class="setting-item clickable" onclick="alert('Привязка соцсетей')">
+                                    <div class="setting-info">
+                                        <strong>Привязанные аккаунты</strong>
+                                        <p>VK, Telegram</p>
+                                    </div>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+
+                            <div class="settings-section danger-zone">
+                                <h3>Опасная зона</h3>
+                                <div class="setting-item clickable" onclick="if(confirm('Вы уверены?')) window.location.href='index.html'">
+                                    <div class="setting-info">
+                                        <strong>Удалить аккаунт</strong>
+                                        <p>Все данные будут безвозвратно удалены</p>
+                                    </div>
+                                    <button class="btn-danger">Удалить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ФУТЕР (ИДЕНТИЧЕН ГЛАВНОЙ) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ИНФОРМАЦИЯ</h3>
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Магазины</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>СЕРВИС И ПОМОЩЬ</h3>
+                    <ul>
+                        <li><a href="#">О доставке</a></li>
+                        <li><a href="#">Личный кабинет</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Публичная оферта</a></li>
+                        <li><a href="#">Пользовательское соглашение</a></li>
+                        <li><a href="#">Контактная информация</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>КОНТАКТЫ</h3>
+                    <div class="footer-contacts">
+                        <a href="tel:+89999999999" class="contact-phone">+8 (999) 999-99-99</a>
+                        <a href="mailto:sportcity@mail.ru" class="contact-email">sportcity@mail.ru</a>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-vk"></i></a>
+                            <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                        <div class="newsletter">
+                            <h4>ХОТИТЕ ПОЛУЧАТЬ СКИДКИ ПЕРВЫМ?</h4>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="Введите свой e-mail">
+                                <button><i class="far fa-envelope"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/profile.js"></script>
+</body>
+</html>

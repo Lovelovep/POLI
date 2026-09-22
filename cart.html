@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - СпортСити</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/css/cart.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ХЕДЕР -->
+    <header class="top-header">
+      <div class="top-bar container">
+        <span>г. Челябинск</span>
+          <div class="top-links">
+            <a href="#">Магазины</a>
+            <a href="#">Помощь</a>
+          </div>
+      </div>
+    </header>
+
+    <header class="site-header">
+        <div class="main-header container">
+            <a href="index.html" class="logo">СпортСити</a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Поиск">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="user-actions">
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="far fa-heart"></i></a>
+                <a href="#" class="login"><i class="far fa-user"></i>ВОЙТИ</a>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <div class="container nav-container">
+                <button class="catalog-btn" id="catalogBtn">
+                    <i class="fas fa-bars"></i>КАТАЛОГ
+                </button>
+                <a href="#" class="nav-link">ЖЕНЩИНАМ</a>
+                <a href="#" class="nav-link">МУЖЧИНАМ</a>
+                <a href="#" class="nav-link">ДЕТЯМ И ПОДРОСТКАМ</a>
+                <a href="#" class="nav-link">БРЕНДЫ</a>
+                <a href="#" class="nav-link">АКЦИИ</a>
+                <a href="#" class="nav-link sale-link">% РАСПРОДАЖА</a>
+                <a href="#" class="nav-link premium-link"><i class="fas fa-star"></i> PREMIUM</a>
+            </div>
+        </nav>
+
+        <!-- КАТАЛОГ -->
+        <div class="catalog-dropdown" id="catalogDropdown">
+            <div class="catalog-dropdown-header">
+                <span class="catalog-dropdown-title">КАТАЛОГ</span>
+                <button class="close-catalog-dropdown" id="closeCatalogDropdown"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="catalog-dropdown-body">
+                <div class="catalog-sidebar">
+                    <ul>
+                        <li class="active">Всё</li>
+                        <li>Одежда</li>
+                        <li>Обувь</li>
+                        <li>Аксессуары</li>
+                        <li>Спорт и отдых</li>
+                        <li>Туризм</li>
+                        <li>Питание</li>
+                    </ul>
+                </div>
+                <div class="catalog-main">
+                    <div class="catalog-column">
+                        <h4>ЖЕНЩИНАМ</h4>
+                        <a href="#">Кроссовки</a>
+                        <a href="#">Кеды</a>
+                        <a href="#">Ботинки</a>
+                        <a href="#">Куртки</a>
+                        <a href="#">Купальники</a>
+                        <a href="#">Леггинсы</a>
+                    </div>
+                    <div class="catalog-column">
+                        <h4>МУЖЧИНАМ</h4>
+                        <a href="#">Кроссовки</a>
+                        <a href="#">Кеды</a>
+                        <a href="#">Ботинки</a>
+                        <a href="#">Куртки</a>
+                        <a href="#">Футболки</a>
+                        <a href="#">Штаны</a>
+                    </div>
+                    <div class="catalog-column">
+                        <h4>ДЕТЯМ</h4>
+                        <a href="#">Девочкам</a>
+                        <a href="#">Мальчикам</a>
+                        <a href="#">Малышам</a>
+                        <a href="#">Школьная форма</a>
+                    </div>
+                    <div class="catalog-column">
+                        <h4>ВИДЫ СПОРТА</h4>
+                        <a href="#">Бег</a>
+                        <a href="#">Фитнес</a>
+                        <a href="#">Футбол</a>
+                        <a href="#">Плавание</a>
+                        <a href="#">Зимний спорт</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- МОДАЛЬНОЕ ОКНО ВХОДА -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-modal">
+            <button class="login-close" id="loginClose"><i class="fas fa-times"></i></button>
+            <div class="login-image">
+                <img src="./assets/img/Баннер_Для_Входа.png" alt="Спорт">
+            </div>
+            <div class="login-form-container">
+                <h2>Войдите в аккаунт</h2>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="login">Логин</label>
+                        <input type="text" id="login" name="login">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" name="password" placeholder="Длина пароля не менее 6 символов">
+                    </div>
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Запомнить меня</label>
+                    </div>
+                    <button type="submit" class="login-btn">ВОЙТИ</button>
+                    <div class="login-links">
+                        <p>Ещё не зарегистрированы? <a href="#">Регистрация</a></p>
+                        <a href="#" class="admin-link">Войти как администратор</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ КОРЗИНЫ -->
+    <main class="cart-page">
+        <div class="container">
+            
+            <!-- ЗАГОЛОВОК -->
+            <div class="cart-header">
+                <h1>КОРЗИНА</h1>
+                <span class="cart-count" id="cartCount">1 товар</span>
+            </div>
+
+            <!-- СПИСОК ТОВАРОВ -->
+            <div class="cart-content">
+                
+                <!-- ЛЕВАЯ КОЛОНКА - ТОВАРЫ -->
+                <div class="cart-items">
+                    
+                    <!-- Товар 1 -->
+                    <div class="cart-item" data-price="4999" data-discount="0">
+                        <div class="item-checkbox">
+                            <input type="checkbox" id="item1" class="item-select" checked>
+                            <label for="item1"></label>
+                        </div>
+                        
+                        <div class="item-image">
+                            <img src="./assets/img/кроссовки1.png" alt="Кроссовки">
+                        </div>
+                        
+                        <div class="item-details">
+                            <div class="item-badge">-20%</div>
+                            <h3 class="item-title">Кроссовки мужские Demix Frontline Wave 2</h3>
+                            <div class="item-info">
+                                <span>Артикул: 130368DMX-WM-39</span>
+                                <span>Цвет: белый/синий</span>
+                            </div>
+                        </div>
+                        
+                        <div class="item-price">
+                            <div class="current-price">4 999 ₽</div>
+                            <div class="old-price">5 999 ₽</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ПРАВАЯ КОЛОНКА - ИТОГИ -->
+                <div class="cart-summary">
+                    <div class="summary-block">
+                        <div class="summary-row">
+                            <span>Товары, <span id="totalItems">0</span> шт.</span>
+                            <span id="itemsPrice">0 ₽</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Скидки и акции</span>
+                            <span id="discountPrice" class="discount-text">0 ₽</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Итого</span>
+                            <span id="totalPrice">0 ₽</span>
+                        </div>
+                    </div>
+                    
+                    <a href="./checkout.html">
+                        <button class="checkout-btn" id="checkoutBtn" disabled>Оплатить</button>
+                    </a>
+
+                    <div class="cart-actions">
+                        <a href="./index.html">
+                            <button class="continue-shopping">
+                                <i class="fas fa-arrow-left"></i> Продолжить покупки
+                            </button>
+                        </a>
+
+                        <button class="clear-cart" id="clearCart">
+                            <i class="fas fa-trash"></i> Очистить корзину
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ПУСТАЯ КОРЗИНА (скрыта по умолчанию) -->
+            <div class="cart-empty" id="emptyCart" style="display: none;">
+                <i class="fas fa-shopping-cart"></i>
+                <h2>Ваша корзина пуста</h2>
+                <p>Добавьте товары из каталога</p>
+                <a href="index.html" class="btn-to-catalog">Перейти в каталог</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ФУТЕР -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ИНФОРМАЦИЯ</h3>
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Магазины</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>СЕРВИС И ПОМОЩЬ</h3>
+                    <ul>
+                        <li><a href="#">О доставке</a></li>
+                        <li><a href="#">Личный кабинет</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Публичная оферта</a></li>
+                        <li><a href="#">Пользовательское соглашение</a></li>
+                        <li><a href="#">Контактная информация</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>КОНТАКТЫ</h3>
+                    <div class="footer-contacts">
+                        <a href="tel:+89999999999" class="contact-phone">+8 (999) 999-99-99</a>
+                        <a href="mailto:sportcity@mail.ru" class="contact-email">sportcity@mail.ru</a>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-vk"></i></a>
+                            <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                        <div class="newsletter">
+                            <h4>ХОТИТЕ ПОЛУЧАТЬ СКИДКИ ПЕРВЫМ?</h4>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="Введите свой e-mail">
+                                <button><i class="far fa-envelope"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/cart.js"></script>
+</body>
+</html>
