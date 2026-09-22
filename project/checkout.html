@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа - СпортСити</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/checkout.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ХЕДЕР -->
+    <header class="top-header">
+      <div class="top-bar container">
+        <span>г. Челябинск</span>
+          <div class="top-links">
+            <a href="#">Магазины</a>
+            <a href="#">Помощь</a>
+          </div>
+      </div>
+    </header>
+
+    <header class="site-header">
+        <div class="main-header container">
+            <a href="index.html" class="logo">СпортСити</a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Поиск">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="user-actions">
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="far fa-heart"></i></a>
+                <a href="#" class="login"><i class="far fa-user"></i>ВОЙТИ</a>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <div class="container nav-container">
+                <button class="catalog-btn" id="catalogBtn">
+                    <i class="fas fa-bars"></i>КАТАЛОГ
+                </button>
+                <a href="#" class="nav-link">ЖЕНЩИНАМ</a>
+                <a href="#" class="nav-link">МУЖЧИНАМ</a>
+                <a href="#" class="nav-link">ДЕТЯМ И ПОДРОСТКАМ</a>
+                <a href="#" class="nav-link">БРЕНДЫ</a>
+                <a href="#" class="nav-link">АКЦИИ</a>
+                <a href="#" class="nav-link sale-link">% РАСПРОДАЖА</a>
+                <a href="#" class="nav-link premium-link"><i class="fas fa-star"></i> PREMIUM</a>
+            </div>
+        </nav>
+
+        <!-- КАТАЛОГ -->
+        <div class="catalog-dropdown" id="catalogDropdown">
+            <div class="catalog-dropdown-header">
+                <span class="catalog-dropdown-title">КАТАЛОГ</span>
+                <button class="close-catalog-dropdown" id="closeCatalogDropdown"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="catalog-dropdown-body">
+                <div class="catalog-sidebar">
+                    <ul>
+                        <li class="active">Всё</li>
+                        <li>Одежда</li>
+                        <li>Обувь</li>
+                        <li>Аксессуары</li>
+                        <li>Спорт и отдых</li>
+                    </ul>
+                </div>
+                <div class="catalog-main">
+                    <div class="catalog-column">
+                        <h4>ЖЕНЩИНАМ</h4>
+                        <a href="#">Кроссовки</a>
+                        <a href="#">Кеды</a>
+                        <a href="#">Ботинки</a>
+                    </div>
+                    <div class="catalog-column">
+                        <h4>МУЖЧИНАМ</h4>
+                        <a href="#">Кроссовки</a>
+                        <a href="#">Кеды</a>
+                        <a href="#">Ботинки</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- МОДАЛЬНОЕ ОКНО ВХОДА -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-modal">
+            <button class="login-close" id="loginClose"><i class="fas fa-times"></i></button>
+            <div class="login-image">
+                <img src="./assets/img/Баннер_Для_Входа.png" alt="Спорт">
+            </div>
+            <div class="login-form-container">
+                <h2>Войдите в аккаунт</h2>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="login">Логин</label>
+                        <input type="text" id="login" name="login">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" name="password" placeholder="Длина пароля не менее 6 символов">
+                    </div>
+                    <button type="submit" class="login-btn">ВОЙТИ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО УСПЕШНОГО ЗАКАЗА -->
+    <div class="success-overlay" id="successOverlay">
+        <div class="success-modal">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Заказ оформлен!</h2>
+            <p>Ваш заказ №<span id="orderNumber">12345</span> успешно оформлен.</p>
+            <p class="success-subtitle">Мы отправим уведомление о статусе заказа на вашу электронную почту.</p>
+            <a href="index.html" class="btn-to-main">На главную</a>
+        </div>
+    </div>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <main class="checkout-page">
+        <div class="container">
+            
+            <h1 class="page-title">Оформление заказа</h1>
+
+            <div class="checkout-layout">
+                
+                <!-- ЛЕВАЯ ЧАСТЬ - ФОРМЫ -->
+                <div class="checkout-forms">
+                    
+                    <!-- ШАГ 1: СПОСОБ ПОЛУЧЕНИЯ -->
+                    <div class="checkout-section active" id="step1">
+                        <div class="section-header">
+                            <div class="step-number active">1</div>
+                            <h3>СПОСОБ ПОЛУЧЕНИЯ</h3>
+                        </div>
+
+                        <!-- Выбор города -->
+                        <div class="city-selector">
+                            <div class="city-label">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>ТВОЙ ГОРОД:</span>
+                            </div>
+                            <div class="city-dropdown" id="cityDropdown">
+                                <div class="city-selected" id="citySelected">
+                                    ЧЕЛЯБИНСК
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="city-list" id="cityList">
+                                    <div class="city-option active" data-city="Челябинск">Челябинск</div>
+                                    <div class="city-option" data-city="Москва">Москва</div>
+                                    <div class="city-option" data-city="Санкт-Петербург">Санкт-Петербург</div>
+                                    <div class="city-option" data-city="Екатеринбург">Екатеринбург</div>
+                                    <div class="city-option" data-city="Новосибирск">Новосибирск</div>
+                                    <div class="city-option" data-city="Казань">Казань</div>
+                                    <div class="city-option" data-city="Уфа">Уфа</div>
+                                    <div class="city-option" data-city="Краснодар">Краснодар</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="section-divider">
+
+                        <!-- Способ получения -->
+                        <div class="delivery-options">
+                            <div class="delivery-option active" id="deliveryCourier">
+                                <div class="option-icon">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <div class="option-info">
+                                    <div class="option-title">Доставка курьером</div>
+                                    <div class="option-subtitle">Экспресс, сегодня бесплатно</div>
+                                </div>
+                            </div>
+                            
+                            <div class="delivery-or">ИЛИ</div>
+                            
+                            <div class="delivery-option" id="deliveryPickup">
+                                <div class="option-icon">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                                <div class="option-info">
+                                    <div class="option-title">Самовывоз из магазина</div>
+                                    <div class="option-subtitle">с 8:30 до 22:00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Адрес доставки (появляется при выборе курьера) -->
+                        <div class="address-form" id="addressForm">
+                            <div class="form-group">
+                                <label class="form-label">Город, улица и дом <span class="required">*</span></label>
+                                <input type="text" class="form-input" placeholder="Челябинск" value="Челябинск">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Подъезд <span class="required">*</span></label>
+                                    <input type="text" class="form-input" placeholder="1">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Этаж <span class="required">*</span></label>
+                                    <input type="text" class="form-input" placeholder="5">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Квартира/Офис <span class="required">*</span></label>
+                                    <input type="text" class="form-input" placeholder="42">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Самовывоз (появляется при выборе самовывоза) -->
+                        <div class="pickup-form" id="pickupForm" style="display: none;">
+                            <div class="pickup-info">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>г. Челябинск, ул. Кирова, 110</strong>
+                                    <p>ТЦ "Алмаз", 2 этаж, магазин СпортСити</p>
+                                    <p class="pickup-hours">Ежедневно с 8:30 до 22:00</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn-continue" onclick="goToStep(2)">ПРОДОЛЖИТЬ</button>
+                    </div>
+
+                    <!-- ШАГ 2: КОНТАКТЫ -->
+                    <div class="checkout-section" id="step2">
+                        <div class="section-header">
+                            <div class="step-number">2</div>
+                            <h3>КОНТАКТЫ</h3>
+                        </div>
+
+                        <div class="contact-form">
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label class="form-label">Имя <span class="required">*</span></label>
+                                    <input type="text" class="form-input" id="contactName" placeholder="Константин">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">E-mail <span class="required">*</span></label>
+                                    <input type="email" class="form-input" id="contactEmail" placeholder="example@mail.ru">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row-phone">
+                                <div class="form-group phone-group">
+                                    <label class="form-label">Телефон <span class="required">*</span></label>
+                                    <input type="tel" class="form-input" id="contactPhone" placeholder="+7 (908) 709-87-88">
+                                </div>
+                                <button class="btn-get-code" onclick="generateCode()" id="getCodeBtn">
+                                    ПОЛУЧИТЬ КОД
+                                </button>
+                            </div>
+
+                            <div class="form-group code-group" id="codeGroup" style="display: none;">
+                                <label class="form-label">Код подтверждения <span class="required">*</span></label>
+                                <div class="code-input-wrapper">
+                                    <input type="text" class="form-input code-input" id="codeInput" placeholder="Введите код" maxlength="4">
+                                    <span class="generated-code" id="generatedCode"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn-continue" onclick="goToStep(3)">ПРОДОЛЖИТЬ</button>
+                    </div>
+
+                    <!-- ШАГ 3: ОПЛАТА -->
+                    <div class="checkout-section" id="step3">
+                        <div class="section-header">
+                            <div class="step-number">3</div>
+                            <h3>ОПЛАТА</h3>
+                        </div>
+
+                        <div class="payment-options">
+                            <div class="payment-option active" id="paymentOnline">
+                                <div class="payment-info">
+                                    <div class="payment-title">Онлайн на сайте</div>
+                                    <div class="payment-methods">
+                                        <img src="./assets/img/Group 38.png" alt="МИР">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="delivery-or">ИЛИ</div>
+                            
+                            <div class="payment-option" id="paymentCash">
+                                <div class="payment-info">
+                                    <div class="payment-title">При получении</div>
+                                    <div class="payment-subtitle">Наличными или картой</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="payment-notice">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Способы оплаты могут измениться при смене способа получения</span>
+                        </div>
+
+                        <button class="btn-order" onclick="placeOrder()">ОФОРМИТЬ ЗАКАЗ</button>
+
+                        <div class="agreement-text">
+                            Нажимая кнопку "Оформить заказ", ты подтверждаешь согласие с 
+                            <a href="#">пользовательским соглашением</a>, 
+                            <a href="#">политикой конфиденциальности</a> и 
+                            <a href="#">условиями оферты</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ПРАВАЯ ЧАСТЬ - ИТОГИ -->
+                <div class="checkout-summary">
+                    <div class="summary-card">
+                        <div class="summary-row">
+                            <span>Товары, 1 шт.</span>
+                            <span>5 999 ₽</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Скидки и акции</span>
+                            <span class="discount-value">-1 000 ₽</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Итого</span>
+                            <span>4 999 ₽</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ФУТЕР -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ИНФОРМАЦИЯ</h3>
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Магазины</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>СЕРВИС И ПОМОЩЬ</h3>
+                    <ul>
+                        <li><a href="#">О доставке</a></li>
+                        <li><a href="#">Личный кабинет</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Публичная оферта</a></li>
+                        <li><a href="#">Пользовательское соглашение</a></li>
+                        <li><a href="#">Контактная информация</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>КОНТАКТЫ</h3>
+                    <div class="footer-contacts">
+                        <a href="tel:+89999999999" class="contact-phone">+8 (999) 999-99-99</a>
+                        <a href="mailto:sportcity@mail.ru" class="contact-email">sportcity@mail.ru</a>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-vk"></i></a>
+                            <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                        <div class="newsletter">
+                            <h4>ХОТИТЕ ПОЛУЧАТЬ СКИДКИ ПЕРВЫМ?</h4>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="Введите свой e-mail">
+                                <button><i class="far fa-envelope"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/checkout.js"></script>
+</body>
+</html>

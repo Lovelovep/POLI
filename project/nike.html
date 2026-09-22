@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коллекция бренда Nike - СпортСити</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style_catalog.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ХЕДЕР (идентичен главной) -->
+    <header class="top-header">
+      <div class="top-bar container1">
+        <span>г. Челябинск</span>
+          <div class="top-links">
+            <a href="#">Магазины</a>
+            <a href="#">Помощь</a>
+          </div>
+      </div>
+    </header>
+
+    <header class="site-header">
+        <div class="main-header container1">
+            <a href="index.html" class="logo">СпортСити</a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Поиск">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="user-actions">
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="far fa-heart"></i></a>
+                <a href="#" class="login" id="loginLink"><i class="far fa-user"></i>ВОЙТИ</a>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <div class="container nav-container">
+                <button class="catalog-btn" id="catalogBtn">
+                    <i class="fas fa-bars"></i>КАТАЛОГ
+                </button>
+                <a href="#" class="nav-link">ЖЕНЩИНАМ</a>
+                <a href="#" class="nav-link">МУЖЧИНАМ</a>
+                <a href="#" class="nav-link">ДЕТЯМ И ПОДРОСТКАМ</a>
+                <a href="#" class="nav-link">БРЕНДЫ</a>
+                <a href="#" class="nav-link">АКЦИИ</a>
+                <a href="#" class="nav-link sale-link">% РАСПРОДАЖА</a>
+                <a href="#" class="nav-link premium-link"><i class="fas fa-star"></i> PREMIUM</a>
+            </div>
+        </nav>
+
+        <!-- КАТАЛОГ -->
+        <div class="catalog-dropdown" id="catalogDropdown">
+            <div class="catalog-dropdown-header">
+                <span class="catalog-dropdown-title">КАТАЛОГ</span>
+                <button class="close-catalog-dropdown" id="closeCatalogDropdown"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="catalog-dropdown-body">
+                <div class="catalog-sidebar">
+                    <ul>
+                        <li class="active">Всё</li>
+                        <li>Одежда</li>
+                        <li>Обувь</li>
+                        <li>Аксессуары</li>
+                        <li>Спорт и отдых</li>
+                        <li>Туризм</li>
+                        <li>Питание</li>
+                    </ul>
+                </div>
+                <div class="catalog-main">
+                    <div class="catalog-column">
+                        <h4>ЖЕНЩИНАМ</h4>
+                        <a href="#">Кроссовки</a>
+                        <a href="#">Кеды</a>
+                        <a href="#">Ботинки</a>
+                        <a href="#">Куртки</a>
+                        <a href="#">Купальники</a>
+                        <a href="#">Леггинсы</a>
+                    </div>
+                    <div class="catalog-column">
+                        <h4>МУЖЧИНАМ</h4>
+                        <a href="#">Кроссовки</a>
+                        <a href="#">Кеды</a>
+                        <a href="#">Ботинки</a>
+                        <a href="#">Куртки</a>
+                        <a href="#">Футболки</a>
+                        <a href="#">Штаны</a>
+                    </div>
+                    <div class="catalog-column">
+                        <h4>ДЕТЯМ</h4>
+                        <a href="#">Девочкам</a>
+                        <a href="#">Мальчикам</a>
+                        <a href="#">Малышам</a>
+                        <a href="#">Школьная форма</a>
+                    </div>
+                    <div class="catalog-column">
+                        <h4>ВИДЫ СПОРТА</h4>
+                        <a href="#">Бег</a>
+                        <a href="#">Фитнес</a>
+                        <a href="#">Футбол</a>
+                        <a href="#">Плавание</a>
+                        <a href="#">Зимний спорт</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- МОДАЛЬНОЕ ОКНО ВХОДА -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-modal">
+            <button class="login-close" id="loginClose"><i class="fas fa-times"></i></button>
+            <div class="login-image">
+                <img src="./assets/img/Баннер_Для_Входа.png" alt="Спорт">
+            </div>
+            <div class="login-form-container">
+                <h2>Войдите в аккаунт</h2>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="login">Логин</label>
+                        <input type="text" id="login" name="login">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" name="password" placeholder="Длина пароля не менее 6 символов">
+                    </div>
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Запомнить меня</label>
+                    </div>
+                    <button type="submit" class="login-btn">ВОЙТИ</button>
+                    <div class="login-links">
+                        <p>Ещё не зарегистрированы? <a href="#">Регистрация</a></p>
+                        <a href="#" class="admin-link">Войти как администратор</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ КАТАЛОГА -->
+    <main class="catalog-page">
+        <div class="container">
+            
+            <!-- ЗАГОЛОВОК БРЕНДА -->
+            <div class="brand-header">
+                <img src="./assets/img/найк.png" alt="Nike" class="brand-logo">
+                <h1>КОЛЛЕКЦИЯ ОДЕЖДЫ БРЕНДА NIKE</h1>
+            </div>
+
+            <div class="catalog-layout">
+                
+                <!-- БОКОВАЯ ПАНЕЛЬ С ФИЛЬТРАМИ -->
+                <aside class="filters-sidebar">
+                    <div class="filters-header">
+                        <h3><i class="fas fa-filter"></i> Фильтр</h3>
+                        <button class="reset-filters" id="resetFilters">Сбросить</button>
+                    </div>
+
+                    <!-- ЦЕНА -->
+                    <div class="filter-section">
+                        <h4 class="filter-title">Цена</h4>
+                        <div class="price-inputs">
+                            <input type="number" id="minPrice" class="price-input" placeholder="от" min="0">
+                            <span class="price-separator">—</span>
+                            <input type="number" id="maxPrice" class="price-input" placeholder="до" max="100000">
+                        </div>
+                    </div>
+
+                    <!-- ПОЛ -->
+                    <div class="filter-section">
+                        <h4 class="filter-title">Пол</h4>
+                        <div class="checkbox-list">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="gender" value="women">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Женщинам</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="gender" value="men">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Мужчинам</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="gender" value="kids">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Детям</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- КАТЕГОРИЯ -->
+                    <div class="filter-section">
+                        <h4 class="filter-title">Категория</h4>
+                        <div class="checkbox-list">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="category" value="shoes">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Обувь</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="category" value="clothing">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Одежда</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="category" value="accessories">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Аксессуары</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- РАЗМЕР -->
+                    <div class="filter-section">
+                        <h4 class="filter-title">Размер</h4>
+                        <div class="size-grid">
+                            <label class="size-item"><input type="checkbox" name="size" value="36"><span>36</span></label>
+                            <label class="size-item"><input type="checkbox" name="size" value="37"><span>37</span></label>
+                            <label class="size-item"><input type="checkbox" name="size" value="38"><span>38</span></label>
+                            <label class="size-item"><input type="checkbox" name="size" value="39"><span>39</span></label>
+                            <label class="size-item"><input type="checkbox" name="size" value="40"><span>40</span></label>
+                            <label class="size-item"><input type="checkbox" name="size" value="41"><span>41</span></label>
+                            <label class="size-item"><input type="checkbox" name="size" value="42"><span>42</span></label>
+                            <label class="size-item"><input type="checkbox" name="size" value="43"><span>43</span></label>
+                            <label class="size-item"><input type="checkbox" name="size" value="44"><span>44</span></label>
+                            <label class="size-item"><input type="checkbox" name="size" value="45"><span>45</span></label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- СЕТКА ТОВАРОВ -->
+                <div class="products-area">
+                    <div class="products-header">
+                        <h2 class="section-title">Товары</h2>
+                        <div class="products-count">Найдено: <span id="productsCount">16</span></div>
+                    </div>
+
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Товар 1 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="4999" data-gender="women" data-category="shoes">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/розовые кроссы.jpg" class="product-img" alt="Кроссовки">
+                                    <div class="product-badges">
+                                        <span class="badge-discount">-20%</span>
+                                        <span class="badge-split">Сплит -3%</span>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">4 999 ₽</span>
+                                        <span class="old-price">5 999 ₽</span>
+                                    </div>
+                                    <div class="product-title">Кроссовки женские Nike Air Max Intrik Lite</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>5</span> <span class="rating-count">(871)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Товар 2 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="5800" data-gender="women" data-category="clothing">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/легинсы.png" class="product-img" alt="Легинсы">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">5 800 ₽</span>
+                                    </div>
+                                    <div class="product-title">Легинсы женские Nike</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>4,5</span> <span class="rating-count">(500)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Товар 3 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="7299" data-gender="women" data-category="shoes">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/розовые кроссы2.jpg" class="product-img" alt="Кеды">
+                                    <div class="product-badges">
+                                        <span class="badge-discount">-50%</span>
+                                        <span class="badge-split">Сплит -3%</span>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">7 299 ₽</span>
+                                        <span class="old-price">14 599 ₽</span>
+                                    </div>
+                                    <div class="product-title">Кеды женские Nike Court Vision Low Next Nature</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>5</span> <span class="rating-count">(320)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Товар 4 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="1289" data-gender="kids" data-category="clothing">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/велосипедки.png" class="product-img" alt="Велосипедки">
+                                    <div class="product-badges">
+                                        <span class="badge-split">Сплит -3%</span>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">1 289 ₽</span>
+                                    </div>
+                                    <div class="product-title">Велосипедки Classic Kids Nike</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>5</span> <span class="rating-count">(213)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Товар 5 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="5990" data-gender="men" data-category="clothing">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/шорты.png" class="product-img" alt="Шорты">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">5 990 ₽</span>
+                                    </div>
+                                    <div class="product-title">Шорты спортивные NK CLUB ALUMNI FT SHORT</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>4</span> <span class="rating-count">(811)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Товар 6 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="6265" data-gender="unisex" data-category="shoes">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/найки джорданы.jpg" class="product-img" alt="Кеды">
+                                    <div class="product-badges">
+                                        <span class="badge-discount">-51%</span>
+                                        <span class="badge-split">Сплит -3%</span>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">6 265 ₽</span>
+                                        <span class="old-price">12 799 ₽</span>
+                                    </div>
+                                    <div class="product-title">Кеды Nike Court Vision Low Next Nature</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>5</span> <span class="rating-count">(445)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Товар 7 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="4990" data-gender="men" data-category="clothing">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/лонгслив.png" class="product-img" alt="Лонгслив">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">4 990 ₽</span>
+                                    </div>
+                                    <div class="product-title">Лонгслив спортивный M NK DF TEE RLGD LS RESET</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>5</span> <span class="rating-count">(589)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Товар 8 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="13104" data-gender="unisex" data-category="shoes">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/найки ягуары.jpg" class="product-img" alt="Кроссовки">
+                                    <div class="product-badges">
+                                        <span class="badge-discount">-43%</span>
+                                        <span class="badge-split">Сплит -3%</span>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">13 104 ₽</span>
+                                        <span class="old-price">22 900 ₽</span>
+                                    </div>
+                                    <div class="product-title">Кроссовки AIR PEGASUS 2005</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>4</span> <span class="rating-count">(178)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Товар 9 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="1149" data-gender="unisex" data-category="accessories">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/спортивки.jpg" class="product-img" alt="Носки">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">1 149 ₽</span>
+                                    </div>
+                                    <div class="product-title">Брюки спортивные</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>5</span> <span class="rating-count">(1200)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Товар 10 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="1349" data-gender="unisex" data-category="accessories">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/НОСКИ.png" class="product-img" alt="Носки 3 пары">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">1 349 ₽</span>
+                                    </div>
+                                    <div class="product-title">Носки Nike Value Cotton Crew, 3 пары</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>4,5</span> <span class="rating-count">(139)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Товар 11 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="1099" data-gender="unisex" data-category="accessories">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/повязка.png" class="product-img" alt="Повязка">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">1 099 ₽</span>
+                                    </div>
+                                    <div class="product-title">Повязка Nike</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>5</span> <span class="rating-count">(101)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Товар 12 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="10990" data-gender="men" data-category="clothing">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/спортивные корич штаны.jpg" class="product-img" alt="Брюки">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">10 990 ₽</span>
+                                    </div>
+                                    <div class="product-title">Брюки спортивные NSW PHX FLC HK QS PANT 2</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>5</span> <span class="rating-count">(67)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Товар 13 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="2023" data-gender="kids" data-category="clothing">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/юбка.jpg" class="product-img" alt="Юбка">
+                                    <div class="product-badges">
+                                        <span class="badge-discount">-40%</span>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">2 023 ₽</span>
+                                        <span class="old-price">3 390 ₽</span>
+                                    </div>
+                                    <div class="product-title">Юбка-тенниска Lucky Star Kids</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>5</span> <span class="rating-count">(89)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Товар 14 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="10499" data-gender="men" data-category="shoes">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/теннисные кроссы.jpg" class="product-img" alt="Кроссовки теннис">
+                                    <div class="product-badges">
+                                        <span class="badge-discount">-30%</span>
+                                        <span class="badge-split">Сплит -3%</span>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">10 499 ₽</span>
+                                        <span class="old-price">14 999 ₽</span>
+                                    </div>
+                                    <div class="product-title">Кроссовки мужские Nike Zoom Vapor Cage 4 Rafa</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>5</span> <span class="rating-count">(234)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Товар 15 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="8699" data-gender="unisex" data-category="accessories">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/сумка.png" class="product-img" alt="Сумка">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">8 699 ₽</span>
+                                    </div>
+                                    <div class="product-title">Сумка спортивная унисекс Nike Academy Team Hardcase</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>4,5</span> <span class="rating-count">(1931)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Товар 16 -->
+                        <a href="product.html" class="product-card-link">
+                            <div class="product-card" data-price="4567" data-gender="men" data-category="shoes">
+                                <div class="product-image-wrapper">
+                                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                                    <img src="./assets/img/черные джорданы.jpg" class="product-img" alt="Кроссовки">
+                                    <div class="product-badges">
+                                        <span class="badge-discount">-34%</span>
+                                        <span class="badge-split">Сплит -3%</span>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-price">
+                                        <span class="current-price">4 567 ₽</span>
+                                        <span class="old-price">6 890 ₽</span>
+                                    </div>
+                                    <div class="product-title">Кроссовки мужские Nike Court Vision Low Next Nature</div>
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i> <span>4</span> <span class="rating-count">(512)</span>
+                                    </div>
+                                    <button class="btn-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ФУТЕР (идентичен главной) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ИНФОРМАЦИЯ</h3>
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Магазины</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>СЕРВИС И ПОМОЩЬ</h3>
+                    <ul>
+                        <li><a href="#">О доставке</a></li>
+                        <li><a href="#">Личный кабинет</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Публичная оферта</a></li>
+                        <li><a href="#">Пользовательское соглашение</a></li>
+                        <li><a href="#">Контактная информация</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>КОНТАКТЫ</h3>
+                    <div class="footer-contacts">
+                        <a href="tel:+89999999999" class="contact-phone">+8 (999) 999-99-99</a>
+                        <a href="mailto:sportcity@mail.ru" class="contact-email">sportcity@mail.ru</a>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-vk"></i></a>
+                            <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                        <div class="newsletter">
+                            <h4>ХОТИТЕ ПОЛУЧАТЬ СКИДКИ ПЕРВЫМ?</h4>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="Введите свой e-mail">
+                                <button><i class="far fa-envelope"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/catalog.js"></script>
+</body>
+</html>
